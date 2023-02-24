@@ -1,0 +1,78 @@
+<!--
+File Name: list.ejs
+Student's Name: Samantha Ortiz de Foronda Rojas
+StudentID: 301284463
+Date: 02/27/2023
+-->
+
+<%-include ../partials/header.ejs%>
+<%-include ../partials/main_nav.ejs%>
+  <!--Main Nav Navigation-->
+  <div class="bg-light-gray padding-100px-top">
+    <main class="container" style="height: 100%">
+      <div class="row" style="height: 100%;">
+        <div class="offset-md-1 col-md-12">
+            <h1 class="font-weight middle">Business Contacts</h1>
+              <%if(typeof displayName =='string'&&displayName){%>
+            <br>
+            <a href="/business_contactsList/add" class="btn" style="color:rgb(223, 167, 99)" role="button"><i class="fas fa-plus-circle"></i>Add a Contact</a>
+            <br>
+            <%}%>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!--Header Row-->
+                <tr>
+                  <%if(typeof displayName =='string'&&displayName){%>
+                    <th class="text-center col-3">Name</th>
+                    <th class="text-center col-3">Number</th>
+                    <th class="text-center col-4">Email</th>
+                    
+                    <th class="text-center col-1"></th>
+                    <th class="text-center col-1"></th>
+                    <%}else{%>
+                    <th class="text-center col-4">Name</th>
+                    <th class="text-center col-4">Number</th>
+                    <th class="text-center col-6">Email</th>
+                                  
+
+                    <%}%>
+                  </tr>
+                  <%for(let count = 0; count < business_contactsList.length; count ++){%>
+                    <!--Content in each row-->
+                        <tr>
+                            <%if(typeof displayName =='string'&&displayName){%>
+                              <td class="text-center col-2" data-name="<%=business_contactsList[count].name%>"><%=business_contactsList[count].name%></td>
+                              <td class="text-center col-2" data-name="<%=business_contactsList[count].number%>"><%=business_contactsList[count].number%></td>
+                              <td class="text-center col-1" data-name="<%=business_contactsList[count].email%>"><%=business_contactsList[count].email%></td>
+                          
+                              <td class="text-center col-1"><a href="/business_contactsList/edit/<%=business_contactsList[count]._id%>" class="btn" style= "background-color:rgb(223, 167, 99)" ><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                              <td class="text-center col-1"><a href="/business_contactsList/delete/<%=business_contactsList[count]._id%>" class="btn btn-danger" style= "color:rgb(223, 167, 99)" ><i class="fas fa-trash-alt"></i>Delete</a></td>
+                            <%}else{%>
+                              <td class="text-center col-2"data-name="<%=business_contactsList[count].name%>"><%=business_contactsList[count].name%></td>
+                              <td class="text-center col-2"data-name="<%=business_contactsList[count].number%>"><%=business_contactsList[count].number%></td>
+                              <td class="text-center col-1"data-name="<%=business_contactsList[count].email%>"><%=business_contactsList[count].email%></td>
+                        
+                            <%}%>  
+                          </tr>
+                            <%}%>
+                            
+                </table>
+
+            </div>
+            <br>
+<br>
+<br>
+      </div>
+    </main>
+  </div>
+  
+   <!--<h1><%= title %></h1>-->
+   <!--<p>Welcome to <%= title %></p>-->
+   <!--Script section-->
+  
+<%-include ../partials/bottom_nav.ejs%>
+ <%-include ../partials/footer.ejs%>
+
+
+
+

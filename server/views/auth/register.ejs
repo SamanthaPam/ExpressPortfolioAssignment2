@@ -1,0 +1,68 @@
+<!--
+File Name: register.ejs
+Student's Name: Samantha Ortiz de Foronda Rojas
+StudentID: 301284463
+Date: 02/27/2023
+-->
+
+<%-include ../partials/header.ejs%>
+<%-include ../partials/main_nav.ejs%>
+<div class="bg-light-gray padding-100px-top">
+    <main class="container" style="height: 500px">
+    <!--message Area-->
+    <%if(messages.length>0){%>
+        <div class="alert alert-danger">
+            <%=messages%>
+            </div>
+            <%}%>
+            <div class="row" style="height: 100%;">
+                <div class="offset md-6 col-md-12">
+                    <!--Title of the page-->
+                    <h1 class="font-weight middle">Please Register</h1>
+                    <!--Form for the registration-->
+                    <form method="POST" autocomplete = "off">
+                        <fieldset class="form-group">
+                            <label for="username">username:</label>
+                            <input type="text" class="form-control"
+                            name="username"
+                            placeholder = "Enter username"
+                            id="username" required autofocus>
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                            <label for="password">password:</label>
+                            <input type="password" class="form-control"
+                            name="password"
+                            placeholder = "Enter password"
+                            id="password" required>
+                            </fieldset>
+
+                             <fieldset class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control"
+                            name="email"
+                            placeholder = "Enter email Address"
+                            id="email" required>
+                            </fieldset>
+
+                             <fieldset class="form-group">
+                            <label for="displayName">display Name:</label>
+                            <input type="text" class="form-control"
+                            name="displayName"
+                            placeholder = "Enter display Name"
+                            id="displayName" required>
+                            </fieldset>
+                            <br>
+                            <fieldset class="form-group text-right">
+                            <input type="submit" class="btn btn-success" value="Register">
+                            <a href="/"><input type="button" class="btn btn-warning" value="Cancel"></a>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+    </main>
+</div>
+
+
+<%-include ../partials/bottom_nav.ejs%>
+ <%-include ../partials/footer.ejs%>
