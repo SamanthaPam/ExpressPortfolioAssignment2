@@ -8,8 +8,8 @@ Date: 02/27/2023
 <%-include ../partials/header.ejs%>
 <%-include ../partials/main_nav.ejs%>
   <!--Main Nav Navigation-->
-  <div class="bg-light-gray padding-100px-top">
-    <main class="container" style="height: 100%">
+  <div class="bg-light-gray padding-100px-top" style="min-height:500px;">
+    <main class="container" >
       <div class="row" style="height: 100%;">
         <div class="offset-md-1 col-md-12">
             <h1 class="font-weight middle">Business Contacts</h1>
@@ -19,7 +19,7 @@ Date: 02/27/2023
             <br>
             <%}%>
             <br>
-            <table class="table table-bordered table-striped table-hover">
+            <table class="table table-bordered table-striped table-hover sortable">
                 <!--Header Row-->
                 <tr>
                   <%if(typeof displayName =='string'&&displayName){%>
@@ -30,7 +30,7 @@ Date: 02/27/2023
                     <th class="text-center col-1"></th>
                     <th class="text-center col-1"></th>
                     <%}else{%>
-                    <th class="text-center col-4">Name</th>
+                    <th class="text-center col-4 sorttable_alpha">Name</th>
                     <th class="text-center col-4">Number</th>
                     <th class="text-center col-6">Email</th>
                                   
