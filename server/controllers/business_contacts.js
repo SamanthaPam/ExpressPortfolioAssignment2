@@ -17,7 +17,7 @@ module.exports.displaybusiness_contactsList = (req, res, next) => {
     });
 }
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('business_contacts/add',{title:'Add business_contacts',displayName:req.user?req.user.displayName:''})
+    res.render('business_contacts/add',{title:'Add Busines Contact',displayName:req.user?req.user.displayName:''})
 }
 
 module.exports.processAddPage = (req, res, next) => {
@@ -45,7 +45,7 @@ module.exports.displayEditPage = (req, res, next) => {
             res.end(err);
         }
         else {
-            res.render('business_contacts/edit', { title: 'Edit business_contacts', business_contacts: business_contactsToEdit,displayName:req.user?req.user.displayName:'' });
+            res.render('business_contacts/edit', { title: 'Edit Business Contact', business_contacts: business_contactsToEdit,displayName:req.user?req.user.displayName:'' });
         }
     });
 }
