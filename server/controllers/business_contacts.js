@@ -11,6 +11,8 @@ module.exports.displaybusiness_contactsList = (req, res, next) => {
             return console.error(err);
         }
         else {
+           // Sort array by name
+            business_contactsList.sort((a, b) => a.name.localeCompare(b.name)); 
            //console.log(business_contactsList);
             res.render('business_contacts/list', { title: 'Business Contacts', business_contactsList: business_contactsList,displayName:req.user?req.user.displayName:'' });
         }
@@ -45,6 +47,8 @@ module.exports.displayEditPage = (req, res, next) => {
             res.end(err);
         }
         else {
+            // Sort array by name
+            business_contactsList.sort((a, b) => a.name.localeCompare(b.name));
             res.render('business_contacts/edit', { title: 'Edit Business Contact', business_contacts: business_contactsToEdit,displayName:req.user?req.user.displayName:'' });
         }
     });
@@ -58,7 +62,7 @@ module.exports.processEditPage = (req, res, next) => {
         "number": req.body.number,
         "email": req.body.email
     });
-    console.log('req.body.price' , req.body)
+    
     business_contacts.updateOne({ _id: id }, updatedbusiness_contacts, (err) => {
         if (err) {
             console.log(err);
