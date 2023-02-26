@@ -12,7 +12,7 @@ module.exports.displaybusiness_contactsList = (req, res, next) => {
         }
         else {
            //console.log(business_contactsList);
-            res.render('business_contacts/list', { title: 'business_contacts', business_contactsList: business_contactsList,displayName:req.user?req.user.displayName:'' });
+            res.render('business_contacts/list', { title: 'Business Contacts', business_contactsList: business_contactsList,displayName:req.user?req.user.displayName:'' });
         }
     });
 }
